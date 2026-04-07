@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>colourshop</title>
+    <meta
+      name="description"
+      content="Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook."
+    >
+    <meta property="og:title" content="colourshop">
+    <meta
+      property="og:description"
+      content="Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/background.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="site-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body data-page="home">
+    <div class="page-shell">
+      <div class="page-background" aria-hidden="true"></div>
+      <div class="page-wash" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <a class="brand-mark js-brand-mark" href="index.html" aria-label="Go to home">colourshop</a>
+        <div class="header-tools">
+          <nav class="site-nav" aria-label="Primary">
+            <a class="nav-link is-current" href="index.html">home</a>
+            <a class="nav-link" href="videos.html">videos</a>
+          </nav>
+          <nav class="social-nav" aria-label="Social links">
+            <ul class="social-list" id="social-list"></ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="home-grid" id="top">
+        <section class="hero-copy">
+          <p class="phonetic" id="hero-phonetic">/ˈskrambl/</p>
+
+          <h1 class="hero-title" id="artist-name">colourshop</h1>
+          <div class="release-inline" id="release-inline" hidden>
+            <p class="release-inline-title" id="release-title">Tra mille volti</p>
+            <p class="release-inline-date" id="release-date">out 11th April</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" id="listen-link" href="#">pre - save </a>
+<!--            <a class="button button-secondary" id="video-page-link" href="videos.html">watch videos</a>-->
+            <p class="listen-note" id="listen-note" hidden></p>
+          </div>
+        </section>
+
+<!--        <aside class="video-panel" aria-labelledby="video-panel-title">-->
+<!--          <div class="video-panel-head">-->
+<!--            <p class="panel-kicker">Watch</p>-->
+<!--            <h2 class="panel-title" id="video-panel-title">Selected videos</h2>-->
+<!--          </div>-->
+<!--          <ul class="video-preview-list" id="video-preview-list"></ul>-->
+<!--        </aside>-->
+      </main>
+    </div>
+  </body>
+</html>

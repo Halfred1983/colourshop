@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>colourshop | videos</title>
+    <meta
+      name="description"
+      content="Official Colourshop video page with embedded YouTube videos."
+    >
+    <meta property="og:title" content="colourshop | videos">
+    <meta
+      property="og:description"
+      content="Official Colourshop video page with embedded YouTube videos."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/background.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" href="assets/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="site-data.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body data-page="videos">
+    <div class="page-shell">
+      <div class="page-background" aria-hidden="true"></div>
+      <div class="page-wash" aria-hidden="true"></div>
+
+      <header class="site-header">
+        <a class="brand-mark js-brand-mark" href="index.html" aria-label="Go to home">colourshop</a>
+        <div class="header-tools">
+          <nav class="site-nav" aria-label="Primary">
+            <a class="nav-link" href="index.html">home</a>
+            <a class="nav-link is-current" href="videos.html">videos</a>
+          </nav>
+          <nav class="social-nav" aria-label="Social links">
+            <ul class="social-list" id="social-list"></ul>
+          </nav>
+        </div>
+      </header>
+
+      <main class="video-page">
+        <section class="video-page-copy">
+          <p class="phonetic" id="page-phonetic">/ˈskrambl/</p>
+          <p class="eyebrow" id="page-eyebrow">i write songs and i sing them</p>
+          <h1 class="page-title">videos</h1>
+          <p class="page-text" id="video-page-text">
+            The same atmosphere, with the songs playing in full.
+          </p>
+        </section>
+
+        <section class="video-grid" id="video-embed-grid" aria-label="Embedded videos"></section>
+      </main>
+    </div>
+  </body>
+</html>

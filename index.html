@@ -4,17 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>colourshop</title>
+    <link rel="canonical" href="https://colourshopmusic.com/">
     <meta
       name="description"
       content="Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook."
     >
+    <meta name="theme-color" content="#081114">
     <meta property="og:title" content="colourshop">
     <meta
       property="og:description"
       content="Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook."
     >
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/background.png">
+    <meta property="og:site_name" content="colourshop">
+    <meta property="og:url" content="https://colourshopmusic.com/">
+    <meta property="og:image" content="https://colourshopmusic.com/assets/share-preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="colourshop official music site">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="colourshop">
+    <meta
+      name="twitter:description"
+      content="Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook."
+    >
+    <meta name="twitter:image" content="https://colourshopmusic.com/assets/share-preview.png">
+    <meta name="twitter:image:alt" content="colourshop official music site">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
     <link rel="icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -35,7 +50,21 @@
 
       <header class="site-header">
         <a class="brand-mark js-brand-mark" href="index.html" aria-label="Go to home">colourshop</a>
-        <div class="header-tools">
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle menu"
+          aria-controls="header-menu"
+          aria-expanded="false"
+        >
+          <span class="menu-toggle-label">menu</span>
+          <span class="menu-toggle-icon" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
+        <div class="header-tools" id="header-menu">
           <nav class="site-nav" aria-label="Primary">
             <a class="nav-link is-current" href="index.html">home</a>
             <a class="nav-link" href="videos.html">videos</a>
@@ -48,12 +77,14 @@
 
       <main class="home-grid" id="top">
         <section class="hero-copy">
-          <p class="phonetic" id="hero-phonetic">/ˈskrambl/</p>
+          <div class="hero-copy-main">
+            <p class="phonetic" id="hero-phonetic">/ˈskrambl/</p>
 
-          <h1 class="hero-title" id="artist-name">colourshop</h1>
-          <div class="release-inline" id="release-inline" hidden>
-            <p class="release-inline-title" id="release-title">Tra mille volti</p>
-            <p class="release-inline-date" id="release-date">out 11th April</p>
+            <h1 class="hero-title" id="artist-name">colourshop</h1>
+            <div class="release-inline" id="release-inline" hidden>
+              <p class="release-inline-title" id="release-title">Tra mille volti</p>
+              <p class="release-inline-date" id="release-date">out 11th April</p>
+            </div>
           </div>
           <div class="hero-actions">
             <a class="button button-primary" id="listen-link" href="#">pre - save </a>

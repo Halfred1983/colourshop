@@ -6,14 +6,46 @@ if (!siteData) {
 
 const page = document.body.dataset.page || "home";
 const descriptionMeta = document.querySelector('meta[name="description"]');
+const canonicalLink = document.querySelector('link[rel="canonical"]');
 const ogTitleMeta = document.querySelector('meta[property="og:title"]');
 const ogDescriptionMeta = document.querySelector('meta[property="og:description"]');
+const ogUrlMeta = document.querySelector('meta[property="og:url"]');
 const ogImageMeta = document.querySelector('meta[property="og:image"]');
+const ogImageAltMeta = document.querySelector('meta[property="og:image:alt"]');
+const twitterTitleMeta = document.querySelector('meta[name="twitter:title"]');
+const twitterDescriptionMeta = document.querySelector('meta[name="twitter:description"]');
+const twitterImageMeta = document.querySelector('meta[name="twitter:image"]');
+const twitterImageAltMeta = document.querySelector('meta[name="twitter:image:alt"]');
+const siteHeader = document.querySelector(".site-header");
+const menuToggle = document.querySelector(".menu-toggle");
+const headerTools = document.querySelector(".header-tools");
 
 const pageTitle =
   page === "videos" ? `${siteData.brandName} | videos` : siteData.brandName;
 const pageDescription =
   page === "videos" ? siteData.videoPageDescription : siteData.seoDescription;
+const siteUrl = (siteData.siteUrl || "").replace(/\/+$/, "");
+const pagePath = page === "videos" ? "/videos.html" : "/";
+const pageUrl = siteUrl ? new URL(pagePath, `${siteUrl}/`).toString() : window.location.href;
+
+const toAbsoluteUrl = (value) => {
+  if (!value) {
+    return "";
+  }
+
+  if (/^https?:\/\//i.test(value)) {
+    return value;
+  }
+
+  if (!siteUrl) {
+    return value;
+  }
+
+  return new URL(value.replace(/^\/+/, ""), `${siteUrl}/`).toString();
+};
+
+const shareImageUrl = toAbsoluteUrl(siteData.shareImage || siteData.backgroundImage);
+const shareImageAlt = siteData.shareImageAlt || `${siteData.brandName} official music site`;
 
 document.title = pageTitle;
 document.documentElement.style.setProperty(
@@ -25,6 +57,10 @@ if (descriptionMeta) {
   descriptionMeta.setAttribute("content", pageDescription);
 }
 
+if (canonicalLink) {
+  canonicalLink.setAttribute("href", pageUrl);
+}
+
 if (ogTitleMeta) {
   ogTitleMeta.setAttribute("content", pageTitle);
 }
@@ -33,8 +69,32 @@ if (ogDescriptionMeta) {
   ogDescriptionMeta.setAttribute("content", pageDescription);
 }
 
+if (ogUrlMeta) {
+  ogUrlMeta.setAttribute("content", pageUrl);
+}
+
 if (ogImageMeta) {
-  ogImageMeta.setAttribute("content", siteData.backgroundImage);
+  ogImageMeta.setAttribute("content", shareImageUrl);
+}
+
+if (ogImageAltMeta) {
+  ogImageAltMeta.setAttribute("content", shareImageAlt);
+}
+
+if (twitterTitleMeta) {
+  twitterTitleMeta.setAttribute("content", pageTitle);
+}
+
+if (twitterDescriptionMeta) {
+  twitterDescriptionMeta.setAttribute("content", pageDescription);
+}
+
+if (twitterImageMeta) {
+  twitterImageMeta.setAttribute("content", shareImageUrl);
+}
+
+if (twitterImageAltMeta) {
+  twitterImageAltMeta.setAttribute("content", shareImageAlt);
 }
 
 for (const brandMark of document.querySelectorAll(".js-brand-mark")) {
@@ -57,6 +117,42 @@ const pagePhonetic = document.getElementById("page-phonetic");
 const pageEyebrow = document.getElementById("page-eyebrow");
 const videoPageText = document.getElementById("video-page-text");
 const videoEmbedGrid = document.getElementById("video-embed-grid");
+
+if (menuToggle && siteHeader && headerTools) {
+  const closeMenu = () => {
+    siteHeader.classList.remove("menu-open");
+    document.body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+
+  menuToggle.addEventListener("click", () => {
+    const isOpen = siteHeader.classList.toggle("menu-open");
+    document.body.classList.toggle("menu-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!siteHeader.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+
+  for (const link of headerTools.querySelectorAll("a")) {
+    link.addEventListener("click", closeMenu);
+  }
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 720) {
+      closeMenu();
+    }
+  });
+}
 
 if (artistName) {
   artistName.textContent = siteData.brandName;
@@ -126,6 +222,28 @@ if (listenLink) {
 if (videoPageLink) {
   videoPageLink.href = siteData.videoPageLink.url;
   videoPageLink.textContent = siteData.videoPageLink.label;
+}
+
+const analyticsMeasurementId = (siteData.analyticsMeasurementId || "").trim();
+
+if (analyticsMeasurementId) {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    function gtag() {
+      window.dataLayer.push(arguments);
+    };
+
+  const analyticsScript = document.createElement("script");
+  analyticsScript.async = true;
+  analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
+    analyticsMeasurementId
+  )}`;
+  analyticsScript.dataset.analytics = analyticsMeasurementId;
+  document.head.appendChild(analyticsScript);
+
+  window.gtag("js", new Date());
+  window.gtag("config", analyticsMeasurementId);
 }
 
 if (socialList) {

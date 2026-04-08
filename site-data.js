@@ -1,6 +1,7 @@
 // Edit this file to update links, text, and video entries.
 window.siteData = {
   brandName: "colourshop",
+  siteUrl: "https://colourshopmusic.com",
   phonetic: "/ˈkʌl.ə ˌʃɒp/",
   eyebrow: "I write songs. I sing songs.",
   heroText:
@@ -12,9 +13,12 @@ window.siteData = {
   seoDescription:
     "Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook.",
   videoPageDescription:
-    "Official Colourshop video page with embedded YouTube videos and the same visual atmosphere as the homepage.",
+    "",
   backgroundImage: "assets/background.png",
+  shareImage: "assets/share-preview.png",
+  shareImageAlt: "colourshop official music site",
   homePreviewCount: 4,
+  analyticsMeasurementId: "G-ZS9T3G2H25",
 
   // Replace this with your real Linktree URL when you have it.
   listenLink: {

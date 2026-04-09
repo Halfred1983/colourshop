@@ -99,6 +99,7 @@ if (twitterImageAltMeta) {
 
 for (const brandMark of document.querySelectorAll(".js-brand-mark")) {
   brandMark.textContent = siteData.brandName;
+  brandMark.dataset.shortBrand = siteData.brandName.charAt(0).toUpperCase();
 }
 
 const artistName = document.getElementById("artist-name");

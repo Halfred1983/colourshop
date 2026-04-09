@@ -610,7 +610,18 @@ body.menu-open .page-shell::after {
   }
 
   .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.2rem;
+    font-size: 0;
+    letter-spacing: 0;
+  }
+
+  .brand-mark::after {
+    content: attr(data-short-brand);
     font-size: clamp(2rem, 13vw, 3rem);
+    line-height: 1;
   }
 
   .menu-toggle {

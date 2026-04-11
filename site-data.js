@@ -57,6 +57,12 @@ window.siteData = {
 
   videos: [
     {
+      slug: "tra-mille-volti",
+      title: "Tra mille volti",
+      meta: "Tra mille volti (Sting cover)",
+      youtubeId: "_SfM6_vTouI"
+    },
+    {
       slug: "be-yourself",
       title: "Be Yourself",
       meta: "Official lyrics video · 2024",

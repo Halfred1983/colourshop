@@ -22,7 +22,7 @@ window.siteData = {
 
   // Replace this with your real Linktree URL when you have it.
   listenLink: {
-    label: "pre - save",
+    label: "LISTEN",
     url: "https://distrokid.com/hyperfollow/colourshop/tra-mille-volti",
     fallbackNote: "Replace the Linktree URL in site-data.js before publishing."
   },

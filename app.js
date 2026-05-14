@@ -19,13 +19,18 @@ const twitterImageAltMeta = document.querySelector('meta[name="twitter:image:alt
 const siteHeader = document.querySelector(".site-header");
 const menuToggle = document.querySelector(".menu-toggle");
 const headerTools = document.querySelector(".header-tools");
+const pageConfig = siteData.songPages?.[page] || null;
 
-const pageTitle =
-  page === "videos" ? `${siteData.brandName} | videos` : siteData.brandName;
+const pageTitle = pageConfig
+  ? `${pageConfig.title} | ${siteData.brandName}`
+  : page === "videos"
+    ? `${siteData.brandName} | videos`
+    : siteData.brandName;
 const pageDescription =
-  page === "videos" ? siteData.videoPageDescription : siteData.seoDescription;
+  pageConfig?.description ||
+  (page === "videos" ? siteData.videoPageDescription : siteData.seoDescription);
 const siteUrl = (siteData.siteUrl || "").replace(/\/+$/, "");
-const pagePath = page === "videos" ? "/videos.html" : "/";
+const pagePath = pageConfig?.path || (page === "videos" ? "/videos.html" : "/");
 const pageUrl = siteUrl ? new URL(pagePath, `${siteUrl}/`).toString() : window.location.href;
 
 const toAbsoluteUrl = (value) => {
@@ -44,13 +49,16 @@ const toAbsoluteUrl = (value) => {
   return new URL(value.replace(/^\/+/, ""), `${siteUrl}/`).toString();
 };
 
-const shareImageUrl = toAbsoluteUrl(siteData.shareImage || siteData.backgroundImage);
+const backgroundImage = pageConfig?.backgroundImage || siteData.backgroundImage;
+const shareImageUrl = toAbsoluteUrl(
+  pageConfig?.shareImage || siteData.shareImage || backgroundImage
+);
 const shareImageAlt = siteData.shareImageAlt || `${siteData.brandName} official music site`;
 
 document.title = pageTitle;
 document.documentElement.style.setProperty(
   "--background-image",
-  `url("${siteData.backgroundImage}")`
+  `url("${backgroundImage}")`
 );
 
 if (descriptionMeta) {
@@ -118,6 +126,12 @@ const pagePhonetic = document.getElementById("page-phonetic");
 const pageEyebrow = document.getElementById("page-eyebrow");
 const videoPageText = document.getElementById("video-page-text");
 const videoEmbedGrid = document.getElementById("video-embed-grid");
+const songPageKicker = document.getElementById("song-page-kicker");
+const songPageTitle = document.getElementById("song-page-title");
+const songPageSummary = document.getElementById("song-page-summary");
+const songPageNote = document.getElementById("song-page-note");
+const songLinkList = document.getElementById("song-link-list");
+const songPreviewFrame = document.getElementById("song-preview-frame");
 
 if (menuToggle && siteHeader && headerTools) {
   const closeMenu = () => {
@@ -183,6 +197,31 @@ if (pageEyebrow) {
 
 if (videoPageText) {
   videoPageText.textContent = siteData.videoPageDescription;
+}
+
+if (pageConfig) {
+  if (songPageKicker) {
+    songPageKicker.textContent = pageConfig.kicker || siteData.brandName;
+  }
+
+  if (songPageTitle) {
+    songPageTitle.textContent = pageConfig.title;
+  }
+
+  if (songPageSummary) {
+    songPageSummary.textContent = pageConfig.summary || pageDescription;
+  }
+
+  if (songPageNote) {
+    const note = (pageConfig.note || "").trim();
+    songPageNote.textContent = note;
+    songPageNote.hidden = note.length === 0;
+  }
+
+  if (songPreviewFrame && pageConfig.spotifyEmbedId) {
+    songPreviewFrame.src = `https://open.spotify.com/embed/track/${pageConfig.spotifyEmbedId}?utm_source=generator`;
+    songPreviewFrame.title = `${pageConfig.title} by ${siteData.brandName}`;
+  }
 }
 
 if (releaseInline) {
@@ -271,6 +310,32 @@ if (socialList) {
     anchor.append(icon, label);
     item.appendChild(anchor);
     socialList.appendChild(item);
+  }
+}
+
+if (songLinkList && pageConfig?.links) {
+  for (const link of pageConfig.links) {
+    const anchor = document.createElement("a");
+    const label = document.createElement("span");
+    const meta = document.createElement("span");
+
+    anchor.className = "song-link-button";
+    if (link.primary) {
+      anchor.classList.add("is-primary");
+    }
+    anchor.href = link.url;
+    anchor.target = "_blank";
+    anchor.rel = "noreferrer";
+    anchor.setAttribute("aria-label", link.label);
+
+    label.className = "song-link-label";
+    label.textContent = link.label;
+
+    meta.className = "song-link-meta";
+    meta.textContent = link.meta;
+
+    anchor.append(label, meta);
+    songLinkList.appendChild(anchor);
   }
 }
 

@@ -280,6 +280,133 @@ body.menu-open .page-shell::after {
   padding: 2rem 0 2.4rem;
 }
 
+.song-landing {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: min(34rem, calc(100vw - 2.4rem));
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 1.6rem 0 2.4rem;
+}
+
+.song-brand {
+  align-self: flex-start;
+  margin-bottom: clamp(1.5rem, 8vh, 4rem);
+}
+
+.song-card {
+  width: min(100%, 32rem);
+  padding: 1.4rem;
+  border: 1px solid var(--panel-border);
+  border-radius: 1.7rem;
+  background: rgba(8, 13, 14, 0.7);
+  backdrop-filter: blur(20px) saturate(135%);
+  box-shadow: var(--shadow);
+}
+
+.song-page-kicker,
+.song-link-meta {
+  letter-spacing: 0.18em;
+}
+
+.song-page-kicker {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-300);
+}
+
+.song-link-title {
+  margin: 0.5rem 0 0;
+  font-family: "CAF Brewery", serif;
+  font-size: clamp(4.2rem, 12vw, 6.1rem);
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+}
+
+.song-link-copy {
+  margin: 1rem 0 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-200);
+}
+
+.song-preview {
+  margin-top: 1.2rem;
+  overflow: hidden;
+  border: 1px solid rgba(237, 241, 238, 0.12);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.song-preview iframe {
+  display: block;
+  width: 100%;
+  min-height: 152px;
+  border: 0;
+}
+
+.song-link-list {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.song-link-button {
+  display: grid;
+  gap: 0.28rem;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(237, 241, 238, 0.15);
+  border-radius: 1.2rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.song-link-button:hover,
+.song-link-button:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(237, 241, 238, 0.34);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.song-link-button.is-primary {
+  border-color: rgba(202, 106, 67, 0.38);
+  background: linear-gradient(135deg, rgba(181, 74, 41, 0.22), rgba(202, 106, 67, 0.16));
+  box-shadow: 0 18px 36px rgba(181, 74, 41, 0.18);
+}
+
+.song-link-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.song-link-meta {
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  color: var(--text-300);
+}
+
+.song-link-note {
+  margin: 1rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.65;
+  color: var(--text-300);
+}
+
 .hero-copy {
   display: grid;
   justify-items: center;
@@ -599,7 +726,8 @@ body.menu-open .page-shell::after {
 @media (max-width: 720px) {
   .site-header,
   .home-grid,
-  .video-page {
+  .video-page,
+  .song-landing {
     width: min(100vw - 1.4rem, 100%);
   }
 
@@ -727,6 +855,37 @@ body.menu-open .page-shell::after {
   .page-text {
     font-size: 0.94rem;
     line-height: 1.68;
+  }
+
+  .song-landing {
+    justify-content: flex-start;
+    padding: 1.1rem 0 2rem;
+  }
+
+  .song-brand {
+    margin-bottom: 1.2rem;
+  }
+
+  .song-card {
+    padding: 1.1rem;
+    border-radius: 1.3rem;
+  }
+
+  .song-link-title {
+    font-size: clamp(3.6rem, 18vw, 5rem);
+  }
+
+  .song-link-copy {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .song-preview iframe {
+    min-height: 152px;
+  }
+
+  .song-link-button {
+    padding: 0.95rem 0.95rem 0.9rem;
   }
 
   .hero-actions {

@@ -32,6 +32,42 @@ window.siteData = {
     url: "videos.html"
   },
 
+  songPages: {
+    florence: {
+      path: "/florence/",
+      title: "Florence",
+      kicker: "one song · every platform",
+      description: "One page with streaming links for Florence by colourshop.",
+      summary: "Choose your platform and open Florence directly.",
+      note:
+        "The official all-platform link also lists iTunes and iHeartRadio for this release.",
+      spotifyEmbedId: "1eeIICeYhxXe6luMoQ70to",
+      links: [
+        {
+          label: "all platforms",
+          meta: "Official DistroKid smart link",
+          url: "https://distrokid.com/hyperfollow/colourshop/florence",
+          primary: true
+        },
+        {
+          label: "spotify",
+          meta: "Open the track on Spotify",
+          url: "https://open.spotify.com/track/1eeIICeYhxXe6luMoQ70to"
+        },
+        {
+          label: "apple music",
+          meta: "Open the Florence single on Apple Music",
+          url: "https://music.apple.com/gb/album/florence-single/1776600458"
+        },
+        {
+          label: "shazam",
+          meta: "Song details and quick-open options",
+          url: "https://www.shazam.com/song/1776600459/florence"
+        }
+      ]
+    }
+  },
+
   socialLinks: [
     {
       label: "Spotify",

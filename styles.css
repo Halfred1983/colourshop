@@ -469,6 +469,7 @@ body.menu-open .page-shell::after {
 
 .oldman-art-wrap {
   position: relative;
+  aspect-ratio: 1 / 1;
 }
 
 .oldman-art-wrap::after {
@@ -484,6 +485,9 @@ body.menu-open .page-shell::after {
 .oldman-art {
   display: block;
   width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border: 1px solid rgba(255, 247, 238, 0.28);
   border-radius: 0.25rem;
   box-shadow: 0 2rem 4.5rem rgba(7, 4, 2, 0.5);

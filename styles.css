@@ -499,8 +499,8 @@ body.menu-open .page-shell::after {
 
 .oldman-eyebrow,
 .oldman-artist,
-.oldman-services p,
-.oldman-services li,
+.oldman-spotify-heading,
+.oldman-spotify-catalogue > p,
 .oldman-footer {
   font-family: "Courier Prime", "Courier New", monospace;
 }
@@ -539,80 +539,67 @@ body.menu-open .page-shell::after {
   line-height: 1.6;
 }
 
-.oldman-presave {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: min(100%, 25rem);
+.oldman-spotify {
+  width: min(100%, 29rem);
   margin-top: 1.8rem;
-  padding: 1rem 1.1rem 1rem 1.25rem;
-  border: 1px solid rgba(255, 248, 240, 0.82);
-  border-radius: 999px;
-  background: #fff5eb;
-  box-shadow: 0 1.1rem 2.5rem rgba(7, 4, 2, 0.3);
-  color: #2b1610;
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
-.oldman-presave span:last-child {
-  font-size: 1.25rem;
-  line-height: 0.7;
-}
-
-.oldman-presave:hover,
-.oldman-presave:focus-visible {
-  transform: translateY(-2px);
-  background: #ffffff;
-  box-shadow: 0 1.4rem 3rem rgba(7, 4, 2, 0.42);
-}
-
-.oldman-services {
-  margin-top: 1.65rem;
-  color: rgba(255, 247, 238, 0.72);
-}
-
-.oldman-services p {
-  margin: 0;
+.oldman-spotify-heading,
+.oldman-spotify-catalogue > p {
+  font-family: "Courier Prime", "Courier New", monospace;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
 }
 
-.oldman-services ul {
+.oldman-spotify-heading {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.65rem;
-  margin: 0.65rem 0 0;
-  padding: 0;
-  list-style: none;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.65rem;
+  color: rgba(255, 247, 238, 0.78);
 }
 
-.oldman-services li {
-  font-size: 0.7rem;
-  letter-spacing: 0.04em;
+.oldman-spotify-heading p,
+.oldman-spotify-catalogue > p {
+  margin: 0;
 }
 
-.oldman-services a {
-  color: inherit;
+.oldman-spotify-heading a {
+  flex: none;
+  color: rgba(255, 247, 238, 0.7);
   text-decoration-color: rgba(255, 247, 238, 0.4);
   text-underline-offset: 0.2em;
   transition: color 180ms ease, text-decoration-color 180ms ease;
 }
 
-.oldman-services a:hover,
-.oldman-services a:focus-visible {
+.oldman-spotify-heading a:hover,
+.oldman-spotify-heading a:focus-visible {
   color: #ffffff;
   text-decoration-color: currentColor;
 }
 
-.oldman-services li:not(:last-child)::after {
-  margin-left: 0.65rem;
-  content: "·";
+.oldman-spotify-player {
+  overflow: hidden;
+  border: 1px solid rgba(255, 247, 238, 0.2);
+  border-radius: 0.75rem;
+  background: #121212;
+  box-shadow: 0 1.1rem 2.5rem rgba(7, 4, 2, 0.28);
+}
+
+.oldman-spotify-player iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.oldman-spotify-catalogue {
+  margin-top: 1.1rem;
+}
+
+.oldman-spotify-catalogue > p {
+  margin-bottom: 0.65rem;
+  color: rgba(255, 247, 238, 0.7);
 }
 
 .oldman-footer {
@@ -1163,17 +1150,27 @@ body.menu-open .page-shell::after {
     font-size: 0.95rem;
   }
 
-  .oldman-presave {
+  .oldman-spotify {
     width: 100%;
     margin-top: 1.35rem;
   }
 
-  .oldman-services {
-    margin-top: 1.35rem;
+  .oldman-spotify-heading {
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.66rem;
   }
 
-  .oldman-services ul {
-    justify-content: center;
+  .oldman-spotify-heading a {
+    text-align: right;
+  }
+
+  .oldman-spotify-catalogue {
+    margin-top: 1rem;
+  }
+
+  .oldman-spotify-player {
+    border-radius: 0.6rem;
   }
 
   .oldman-footer {

@@ -7,23 +7,23 @@ window.siteData = {
   heroText:
     "",
   releaseSpotlight: {
-    title: "Tra mille volti",
-    date: "out 11th April"
+    title: "Old Man",
+    date: "out now"
   },
   seoDescription:
-    "Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook.",
+    "Listen to Old Man, the new single by colourshop, and explore the music and videos.",
   videoPageDescription:
     "",
   backgroundImage: "assets/background.png",
-  shareImage: "assets/share-preview.png",
-  shareImageAlt: "colourshop official music site",
+  shareImage: "assets/old-man/cover.png",
+  shareImageAlt: "Old Man single artwork by colourshop",
   homePreviewCount: 4,
   analyticsMeasurementId: "G-ZS9T3G2H25",
 
   // Replace this with your real Linktree URL when you have it.
   listenLink: {
-    label: "LISTEN",
-    url: "https://distrokid.com/hyperfollow/colourshop/tra-mille-volti",
+    label: "LISTEN NOW",
+    url: "https://open.spotify.com/album/6I6EpxEYheYLh1aJwRN8vB",
     fallbackNote: "Replace the Linktree URL in site-data.js before publishing."
   },
 

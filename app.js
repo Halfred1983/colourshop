@@ -25,7 +25,9 @@ const pageTitle = pageConfig
   ? `${pageConfig.title} | ${siteData.brandName}`
   : page === "videos"
     ? `${siteData.brandName} | videos`
-    : siteData.brandName;
+    : page === "home" && siteData.releaseSpotlight?.title
+      ? `${siteData.brandName} — ${siteData.releaseSpotlight.title}`
+      : siteData.brandName;
 const pageDescription =
   pageConfig?.description ||
   (page === "videos" ? siteData.videoPageDescription : siteData.seoDescription);

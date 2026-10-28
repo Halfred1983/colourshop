@@ -3,33 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>colourshop</title>
+    <title>colourshop — Old Man</title>
     <link rel="canonical" href="https://colourshopmusic.com/">
     <meta
       name="description"
-      content="Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook."
+      content="Listen to Old Man, the new single by colourshop, and explore the music and videos."
     >
     <meta name="theme-color" content="#081114">
-    <meta property="og:title" content="colourshop">
+    <meta property="og:title" content="Old Man — colourshop">
     <meta
       property="og:description"
-      content="Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook."
+      content="Listen to Old Man, the new single by colourshop, and explore the music and videos."
     >
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="colourshop">
     <meta property="og:url" content="https://colourshopmusic.com/">
-    <meta property="og:image" content="https://colourshopmusic.com/assets/share-preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="colourshop official music site">
+    <meta property="og:image" content="https://colourshopmusic.com/assets/old-man/cover.png">
+    <meta property="og:image:alt" content="Old Man single artwork by colourshop">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="colourshop">
+    <meta name="twitter:title" content="Old Man — colourshop">
     <meta
       name="twitter:description"
-      content="Official website for Colourshop. Listen, watch the videos, and follow on Spotify, YouTube, Instagram, and Facebook."
+      content="Listen to Old Man, the new single by colourshop, and explore the music and videos."
     >
-    <meta name="twitter:image" content="https://colourshopmusic.com/assets/share-preview.png">
-    <meta name="twitter:image:alt" content="colourshop official music site">
+    <meta name="twitter:image" content="https://colourshopmusic.com/assets/old-man/cover.png">
+    <meta name="twitter:image:alt" content="Old Man single artwork by colourshop">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
     <link rel="icon" href="assets/favicon.ico">
     <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -43,10 +41,12 @@
     <script src="site-data.js" defer></script>
     <script src="app.js" defer></script>
   </head>
-  <body data-page="home">
-    <div class="page-shell">
-      <div class="page-background" aria-hidden="true"></div>
-      <div class="page-wash" aria-hidden="true"></div>
+  <body data-page="home" class="home-release-page">
+    <div class="page-shell home-release-shell">
+      <video class="home-release-video" autoplay muted loop playsinline poster="assets/old-man/cover.png" aria-hidden="true">
+        <source src="assets/old-man/cyclist-loop.mp4" type="video/mp4">
+      </video>
+      <div class="home-release-overlay" aria-hidden="true"></div>
 
       <header class="site-header">
         <a class="brand-mark js-brand-mark" href="index.html" aria-label="Go to home">colourshop</a>
@@ -75,31 +75,69 @@
         </div>
       </header>
 
-      <main class="home-grid" id="top">
-        <section class="hero-copy">
-          <div class="hero-copy-main">
-            <p class="phonetic" id="hero-phonetic">/ˈskrambl/</p>
-
-            <h1 class="hero-title" id="artist-name">colourshop</h1>
-            <div class="release-inline" id="release-inline" hidden>
-              <p class="release-inline-title" id="release-title">Tra mille volti</p>
-              <p class="release-inline-date" id="release-date">out 11th April</p>
-            </div>
+      <main class="home-release-home" id="top">
+        <section class="home-release-hero" aria-labelledby="home-release-title">
+          <div class="home-release-art-wrap">
+            <img class="home-release-art" src="assets/old-man/cover.png" width="1254" height="1254" alt="Old Man single artwork by colourshop">
           </div>
-          <div class="hero-actions">
-            <a class="button button-primary" id="listen-link" href="#">pre - save </a>
-<!--            <a class="button button-secondary" id="video-page-link" href="videos.html">watch videos</a>-->
-            <p class="listen-note" id="listen-note" hidden></p>
+
+          <div class="home-release-details">
+            <p class="home-release-eyebrow">new single · out now</p>
+            <h1 id="home-release-title">Old Man</h1>
+            <p class="home-release-artist">colourshop</p>
+            <p class="home-release-copy">A song for the road between then and now.</p>
+
+            <div class="home-release-actions">
+              <a class="home-release-action is-primary" href="#listen">listen now</a>
+              <a class="home-release-action" href="#watch">watch lyric video</a>
+            </div>
+
+            <section class="home-release-listening" id="listen" aria-labelledby="home-spotify-title">
+              <div class="home-release-heading">
+                <p id="home-spotify-title">listen on spotify</p>
+                <a href="https://open.spotify.com/artist/0mDYPJAtrPMVGoYizV9H5j" target="_blank" rel="noreferrer">full catalogue <span aria-hidden="true">↗</span></a>
+              </div>
+              <div class="home-release-spotify-player">
+                <iframe
+                  title="Old Man by colourshop on Spotify"
+                  src="https://open.spotify.com/embed/album/6I6EpxEYheYLh1aJwRN8vB?utm_source=generator&theme=0"
+                  width="100%"
+                  height="152"
+                  loading="eager"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                ></iframe>
+              </div>
+            </section>
           </div>
         </section>
 
-<!--        <aside class="video-panel" aria-labelledby="video-panel-title">-->
-<!--          <div class="video-panel-head">-->
-<!--            <p class="panel-kicker">Watch</p>-->
-<!--            <h2 class="panel-title" id="video-panel-title">Selected videos</h2>-->
-<!--          </div>-->
-<!--          <ul class="video-preview-list" id="video-preview-list"></ul>-->
-<!--        </aside>-->
+        <section class="home-release-explore" aria-label="Explore colourshop">
+          <p>explore colourshop</p>
+          <div>
+            <a href="https://open.spotify.com/artist/0mDYPJAtrPMVGoYizV9H5j" target="_blank" rel="noreferrer">music on Spotify <span aria-hidden="true">↗</span></a>
+            <a href="videos.html">watch videos <span aria-hidden="true">→</span></a>
+          </div>
+        </section>
+
+        <section class="home-release-watch" id="watch" aria-labelledby="home-youtube-title">
+          <div class="home-release-watch-copy">
+            <p class="home-release-eyebrow">watch</p>
+            <h2 id="home-youtube-title">Old Man<br>lyrics video</h2>
+            <a href="https://youtu.be/1fKq2vUXxnk?is=Atu0GSUDXbwMgeT8" target="_blank" rel="noreferrer">open in YouTube <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="home-release-youtube-player">
+            <iframe
+              title="Old Man by colourshop on YouTube"
+              src="https://www.youtube-nocookie.com/embed/1fKq2vUXxnk?rel=0"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+
+        <p class="home-release-footer">© 2026 colourshop</p>
       </main>
     </div>
   </body>
